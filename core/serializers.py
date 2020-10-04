@@ -12,7 +12,7 @@ class ToDoCreateSerializer(serializers.ModelSerializer):
     url = serializers.IntegerField(required=False)
     class Meta:
         model = ToDo
-        fields = ["text", "url"]
+        fields = ["text", "url"] # '__all__'
 
 class ToDoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +23,8 @@ class ToDoListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ToDoList
         fields = ["url"]
+
+class ToDoListCodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ToDoList
+        fields = ["code"]
